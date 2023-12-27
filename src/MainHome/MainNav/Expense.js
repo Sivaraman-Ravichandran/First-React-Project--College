@@ -8,7 +8,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import DeleteIcon from "@mui/icons-material/Delete";
-import SendIcon from "@mui/icons-material/Send";
+import { useNavigate } from "react-router-dom";
 function Expense() {
   const [amt, setAmt] = useState(0);
   const [mem, setMem] = useState(0);
@@ -16,7 +16,7 @@ function Expense() {
   const [descrip, setDescrip] = useState("");
   const [data, setData] = useState([]);
   useEffect(() => {
-    setSplit(amt / mem);
+    setSplit(Math.round(amt / mem));
   });
   function additem() {
     if (!amt) {
@@ -40,6 +40,11 @@ function Expense() {
     const array = data.filter((a) => a.id !== id);
     setData(array);
   }
+
+  const navigate = useNavigate();
+  const Next = () => {
+    navigate("/Payment");
+  };
   return (
     <div>
       <div>
@@ -160,8 +165,11 @@ function Expense() {
                 >
                   Delete
                 </Button>
-                <Button variant="contained">Pay my Share</Button>
+                <Button variant="contained" onClick={Next}>
+                  Pay my Share
+                </Button>
               </Stack>
+             
             </li>
           ))}
         </ol>

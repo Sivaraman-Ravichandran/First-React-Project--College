@@ -1,0 +1,10 @@
+.prod {
+  width: 300px;
+  height: 300px;
+}
+.prodiv {
+  margin-left: 250px;
+}
+.prodiv h2 {
+  margin-left: 90px;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import "../MainNav/head.css";
 import Logo from "../../images/shareifyLogo.jpg";
-function head() {
+function Head() {
   return (
     <div>
       <div className="head">
         <img src={Logo} className="logo" alt="error" />
         <div className="user">
           <p style={{ textAlign: "center" }}>
-            <b>Arvindh</b>
+            <b>Aravindh</b>
           </p>
           <p>sivsecuredata@gmail.com</p>
         </div>
@@ -24,4 +24,4 @@ function head() {
   );
 }
 
-export default head;
+export default Head;
